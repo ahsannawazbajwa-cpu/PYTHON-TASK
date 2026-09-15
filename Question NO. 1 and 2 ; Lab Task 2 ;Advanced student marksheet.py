@@ -48,3 +48,26 @@ print(f"Percentage : {percentage:.2f}%")
 print(f"Grade : {grade}")
 print(f"Result : {result}")
 print("--------------")
+
+
+#pay calculator.py
+
+hours = float(input("Enter number of hours worked: "))
+rate = float(input("Enter hourly rate: "))
+
+if hours <= 40:
+    total_pay = hours * rate
+else:
+    overtime_hours = hours - 40
+    total_pay = (40 * rate) + (overtime_hours * rate * 1.5)
+
+print(f"Total Pay: {total_pay:.2f}")
+
+
+
+
+
+
+
+
+
