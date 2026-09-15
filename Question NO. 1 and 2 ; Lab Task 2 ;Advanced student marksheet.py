@@ -50,7 +50,7 @@ print(f"Result : {result}")
 print("--------------")
 
 
-#pay calculator.py
+#QUESTION NO .  1 pay calculator.py
 
 hours = float(input("Enter number of hours worked: "))
 rate = float(input("Enter hourly rate: "))
