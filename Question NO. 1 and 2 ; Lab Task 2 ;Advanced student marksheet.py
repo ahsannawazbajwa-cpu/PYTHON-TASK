@@ -1,19 +1,36 @@
+#QUESTION NO .  1 pay calculator.py
+
+
+hours = float(input("Enter number of hours worked: "))
+rate = float(input("Enter hourly rate: "))
+
+if hours <= 40:
+    total_pay = hours * rate
+else:
+    overtime_hours = hours - 40
+    total_pay = (40 * rate) + (overtime_hours * rate * 1.5)
+
+print(f"Total Pay: {total_pay:.2f}")
+
+#QUESTION marksheet
+
 name = input("Enter student's name: ")
 roll_no = input("Enter roll number: ")
 
+# Prompt requires 5 subjects
 subjects = [
-    "DLD (Digital logic Design)",
-    "E.W (Expository Writting)",
+    "DLD (Digital Logic Design)",
+    "E.W (Expository Writing)",
     "OOP (Object Oriented Programming)",
-    "UHQ-II (Understanding Holy Quran-II)",
-    "IOT (Internet of Things - Basics)",
-    "I.S (Islamic Studies)",
-    "M-II (Mathematics-II - PM)",
+    "IoT (Internet of Things)",
+    "M-II (Mathematics-II)"
 ]
+
 marks = []
 for subj in subjects:
     m = float(input(f"Enter marks for {subj}: "))
     marks.append(m)
+
 num_subjects = len(subjects)
 total = sum(marks)
 percentage = total / num_subjects
@@ -31,6 +48,7 @@ elif percentage >= 40:
 else:
     grade = "F"
 
+# Check if student failed in any subject
 failed_subject = any(m < 40 for m in marks)
 
 if failed_subject or percentage < 40:
@@ -38,30 +56,20 @@ if failed_subject or percentage < 40:
 else:
     result = "Pass"
 
-print("\n MARKSHEET ")
-print(f"Name : {name}")
-print(f"Roll No : {roll_no}")
+print("\n" + "="*35)
+print("            MARKSHEET")
+print("="*35)
+print(f"Name       : {name}")
+print(f"Roll No    : {roll_no}")
+print("-" * 35)
 for subj, m in zip(subjects, marks):
-    print(f"{subj:<38}: {m}")
-print(f"Total : {total}")
+    print(f"{subj:<25}: {m}")
+print("-" * 35)
+print(f"Total      : {total} / {num_subjects * 100}")
 print(f"Percentage : {percentage:.2f}%")
-print(f"Grade : {grade}")
-print(f"Result : {result}")
-print("--------------")
-
-
-#QUESTION NO .  1 pay calculator.py
-
-hours = float(input("Enter number of hours worked: "))
-rate = float(input("Enter hourly rate: "))
-
-if hours <= 40:
-    total_pay = hours * rate
-else:
-    overtime_hours = hours - 40
-    total_pay = (40 * rate) + (overtime_hours * rate * 1.5)
-
-print(f"Total Pay: {total_pay:.2f}")
+print(f"Grade      : {grade}")
+print(f"Result     : {result}")
+print("="*35)
 
 
 
